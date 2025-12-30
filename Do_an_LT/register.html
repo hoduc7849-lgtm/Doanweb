@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký</title>
+  <link rel="stylesheet" href="css/doan.css">
+</head>
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand__logo"></span>
+        <span>DO_AN_LT</span>
+      </a>
+
+      <nav class="nav">
+        <a data-nav href="index.html">Trang chủ</a>
+        <a data-nav href="about.html">Giới thiệu</a>
+        <a data-nav href="contact.html">Liên hệ</a>
+        <a data-nav href="product-detail.html">Sản phẩm</a>
+      </nav>
+
+      <div class="actions">
+        <a class="icon-btn" href="cart.html" aria-label="Giỏ hàng">
+          🛒
+          <span class="badge hidden" id="cartCount">0</span>
+        </a>
+        <a class="btn btn--ghost" href="login.html">Đăng nhập</a>
+        <button class="menu-btn" data-menu-btn aria-label="Menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" data-mobile-nav>
+      <a data-nav href="index.html">Trang chủ</a>
+      <a data-nav href="about.html">Giới thiệu</a>
+      <a data-nav href="contact.html">Liên hệ</a>
+      <a data-nav href="product-detail.html">Sản phẩm</a>
+      <a data-nav href="cart.html">Giỏ hàng</a>
+      <a data-nav href="login.html">Đăng nhập</a>
+    </div>
+  </div>
+</header>
+
+
+  <main class="main-wrapper" style="grid-template-columns:1fr;">
+    <section class="content">
+      <h1 class="page-title">Đăng ký</h1>
+
+      <form class="form" id="registerForm">
+        <div class="form-row">
+          <label>Họ tên</label>
+          <input name="name" required placeholder="Nhập họ tên">
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input name="email" type="email" required placeholder="Nhập email">
+        </div>
+        <div class="form-row">
+          <label>Mật khẩu</label>
+          <input name="pass" type="password" required placeholder="Nhập mật khẩu">
+        </div>
+        <div class="form-actions">
+          <button class="btn-primary" type="submit">Tạo tài khoản</button>
+          <a class="btn-outline" href="login.html">Đã có tài khoản?</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/doan.js"></script>
+</body>
+</html>

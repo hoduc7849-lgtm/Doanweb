@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang chủ - Đồ ăn vặt</title>
+  <link rel="stylesheet" href="css/doan.css">
+</head>
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand__logo"></span>
+        <span>DO_AN_LT</span>
+      </a>
+
+      <nav class="nav">
+        <a data-nav href="index.html">Trang chủ</a>
+        <a data-nav href="about.html">Giới thiệu</a>
+        <a data-nav href="contact.html">Liên hệ</a>
+        <a data-nav href="product-detail.html">Sản phẩm</a>
+      </nav>
+
+      <div class="actions">
+        <a class="icon-btn" href="cart.html" aria-label="Giỏ hàng">
+          🛒
+          <span class="badge hidden" id="cartCount">0</span>
+        </a>
+        <a class="btn btn--ghost" href="login.html">Đăng nhập</a>
+        <button class="menu-btn" data-menu-btn aria-label="Menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" data-mobile-nav>
+      <a data-nav href="index.html">Trang chủ</a>
+      <a data-nav href="about.html">Giới thiệu</a>
+      <a data-nav href="contact.html">Liên hệ</a>
+      <a data-nav href="product-detail.html">Sản phẩm</a>
+      <a data-nav href="cart.html">Giỏ hàng</a>
+      <a data-nav href="login.html">Đăng nhập</a>
+    </div>
+  </div>
+</header>
+
+
+  <main class="main-wrapper">
+    <aside class="sidebar">
+      <h2 class="sidebar-title">DANH MỤC SẢN PHẨM</h2>
+
+      <ul class="category-list" id="categoryList">
+        <li class="category-item active">
+          <button class="category-header" data-category="ALL" type="button">Tất cả</button>
+        </li>
+
+        <li class="category-item">
+          <button class="category-header has-sub" type="button">
+            Món ăn vặt <span class="arrow">▾</span>
+          </button>
+          <ul class="subcategory-list">
+            <li data-category="Ăn vặt" data-sub="Bim bim">Bim bim</li>
+            <li data-category="Ăn vặt" data-sub="Khoai chiên">Khoai chiên</li>
+            <li data-category="Ăn vặt" data-sub="Gà rán">Gà rán</li>
+          </ul>
+        </li>
+
+        <li class="category-item">
+          <button class="category-header has-sub" type="button">
+            Đồ ăn đêm <span class="arrow">▾</span>
+          </button>
+          <ul class="subcategory-list">
+            <li data-category="Ăn đêm" data-sub="Mì cay">Mì cay</li>
+            <li data-category="Ăn đêm" data-sub="Lẩu">Lẩu</li>
+            <li data-category="Ăn đêm" data-sub="Bún phở">Bún phở</li>
+          </ul>
+        </li>
+
+        <li class="category-item">
+          <button class="category-header has-sub" type="button">
+            Đồ uống giải khát <span class="arrow">▾</span>
+          </button>
+          <ul class="subcategory-list">
+            <li data-category="Đồ uống" data-sub="Trà sữa">Trà sữa</li>
+            <li data-category="Đồ uống" data-sub="Sinh tố">Sinh tố</li>
+            <li data-category="Đồ uống" data-sub="Nước ép">Nước ép</li>
+          </ul>
+        </li>
+
+        <li class="category-item">
+          <button class="category-header has-sub" type="button">
+            Đồ nướng <span class="arrow">▾</span>
+          </button>
+          <ul class="subcategory-list">
+            <li data-category="Đồ nướng" data-sub="Thịt xiên">Thịt xiên</li>
+            <li data-category="Đồ nướng" data-sub="Hải sản nướng">Hải sản nướng</li>
+            <li data-category="Đồ nướng" data-sub="BBQ">BBQ tổng hợp</li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <div class="content-head">
+        <h1 class="page-title">Trang chủ</h1>
+
+        <div class="toolbar">
+          <select id="sortSelect" class="select">
+            <option value="default">Sắp xếp: Mặc định</option>
+            <option value="price_asc">Giá: Thấp → Cao</option>
+            <option value="price_desc">Giá: Cao → Thấp</option>
+            <option value="name_asc">Tên: A → Z</option>
+          </select>
+
+          <select id="priceFilter" class="select">
+            <option value="ALL">Giá: Tất cả</option>
+            <option value="0-20000">Dưới 20.000đ</option>
+            <option value="20000-30000">20.000đ - 30.000đ</option>
+            <option value="30000-50000">30.000đ - 50.000đ</option>
+            <option value="50000-9999999">Trên 50.000đ</option>
+          </select>
+
+          <button id="clearFilter" class="btn-outline" type="button">Xóa lọc</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="pagination" id="pagination"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h2 class="footer-title">THÔNG TIN LIÊN HỆ</h2>
+    <ul class="footer-info">
+      <li>Địa chỉ: 27 Đoàn Nhữ Hài, Nguyễn Thái Học, Lê Lợi, TP. Vinh, Nghệ An</li>
+      <li>Điện thoại: 0346 132 620</li>
+      <li>Email: hoduc7849@gmail.com</li>
+    </ul>
+  </footer>
+  <script src="js/doan.js"></script>
+</body>
+</html>
